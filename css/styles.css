@@ -3,7 +3,8 @@
 /* ====================== Оголошуємо змінні CSS ====================== */
 :root {
     --primary-brand-color: #4D5AE5;
-    --pressed-state-color: #404BBF;
+    --primary-brand-color-a: rgba(64, 75, 191, 0.9);
+    --pressed-state-color: #404bbf;
     --hero-text-color: #ffffff;
     --dark-color: #2E2F42;
     --success-color: #31D0AA;
@@ -526,6 +527,31 @@ button {
     border-radius: 4px;
 }
 
+.wrapper {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.overley {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 40px 32px;
+    color: var(--light-colors);
+    background-color: var(--primary-brand-color-a);
+
+    transform: translate(0, 100%);
+    transition: transform 500ms linear;
+}
+
+.card-set .item .link:hover .overley,
+.card-set .item .link:focus .overley {
+    transform: translate(0, 0);
+}
 /* ====================== Portfolio cards ====================== */
 
 .card-set {

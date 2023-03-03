@@ -6,14 +6,18 @@
     --primary-brand-color-a: rgba(64, 75, 191, 0.9);
     --pressed-state-color: #404bbf;
     --hero-text-color: #ffffff;
-    --dark-color: #2E2F42;
+    --dark-color: #2e2f42;
+    --dark-color-rgba: rgba(47, 47, 66, 0.5);
     --success-color: #31D0AA;
     --text-color: #434455;
     --subtle-text-color: #8E8F99;
     --accent-color: #E7E9FC;
     --light-colors: #F4F4FD;
+    --modal-window: #FCFCFC;
     
     --space-under-section: 120px;
+
+    --transition-var: 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 /* ====================== Body global stylea! ====================== */
@@ -114,6 +118,14 @@ button {
     color: var(--dark-color);
 }
 
+/* Text style for befor effect in nav */
+/* .medium-text-nav {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--dark-color);
+} */
+
 /* Footer text */
 .footer-text {
     
@@ -193,6 +205,13 @@ button {
     border: none;
     cursor: pointer;
 }
+
+.hero-button:focus,
+.hero-button:hover {
+    color: var(--accent-color);
+    background-color: var(--pressed-state-color);
+}
+
 /* ====================== logo ====================== */
 .logo-web {
     font-family: 'Raleway', sans-serif;
@@ -270,6 +289,7 @@ button {
 }
 
 .site-nav {
+    /* position: relative; */
     display: flex;
     margin-left: 76px;
 }
@@ -282,18 +302,40 @@ button {
     display: block;
     padding-top: 24px;
     padding-bottom: 24px;
+    transition: color var(--transition-var);
 }
 
 .site-nav .link:hover,
 .site-nav .link:focus {
-    color: var(--primary-brand-color);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--primary-brand-color);    
 }
 
 /* A highlighted link to the active page */
 .site-nav .carrent {
     color: blue;
 }
+
+.site-nav-item {
+    display: block;
+}
+
+.site-nav-item {
+    position: relative;
+}
+
+.nav-index::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin: 0 auto; 
+    margin-top: 21px; 
+    background-color: var(--primary-brand-color);
+    border-radius: 2px;
+}
+
+
 /* ====================== Hero. ====================== */
 
 .hero-bg {
@@ -369,12 +411,12 @@ button {
     height: 40px;
     border-radius: 50%;
     background-color: var(--primary-brand-color);
+    transition: background-color var(--transition-var);
 }
 
 .social-list-link:focus,
 .social-list-link:hover {
     background-color: var(--pressed-state-color);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .small-text-icon {
@@ -413,24 +455,25 @@ button {
     align-items: center;
     width: 168px;
     height: 88px;
-    border: 10px solid var(--subtle-text-color);
+    border: 1px solid var(--subtle-text-color);
     border-radius: 4px;
+    transition: border-color var(--transition-var);
 }
 
 .customers-list-icon {
     fill: var(--subtle-text-color);
+    transition: fill var(--transition-var);
 }
 
 .customers-list-link:focus,
 .customers-list-link:hover {
     border-color: var(--primary-brand-color);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   
 }
 
 .customers-list-link:focus .customers-list-icon,
 .customers-list-link:hover .customers-list-icon {
     fill: var(--primary-brand-color);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 } 
 
 /* ====================== Footer. ====================== */
@@ -455,13 +498,13 @@ button {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color var(--transition-var);
 }
 
 .social-list-link-f:focus,
 .social-list-link-f:hover {
-    background-color: var(--success-color);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--success-color);    
 }
 
 /* ====================== Adress Activation ====================== */
@@ -469,11 +512,13 @@ button {
 .adress-nav {
     margin-left: auto;
     display: flex;
+    transition: color var(--transition-var);
 }
 
 .adress-nav .link:hover,
 .adress-nav .link:focus {
     color: var(--primary-brand-color);
+    
 }
 
 .auth-nav {
@@ -520,6 +565,7 @@ button {
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
     text-align: center;
+    transition: color var(--transition-var), background-color var(--transition-var);
 }
 
 .button-nav:hover,
@@ -530,7 +576,7 @@ button {
 
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .wrapper {
@@ -551,7 +597,7 @@ button {
     background-color: var(--primary-brand-color-a);
 
     transform: translate(0, 100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition-var);
 }
 
 .card-set .item .link:hover .overley,
@@ -579,14 +625,15 @@ button {
     padding-bottom: 32px;
     padding-left: 16px;
     
-    border: 1px solid #E7E9FC;
+    border: 1px solid var(--accent-color);
     border-top: 0px;
+    
 }
 
 .card-set .item:hover,
 .card-set .item:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .card-set > .item {
@@ -594,6 +641,68 @@ button {
     margin-top: 48px;
 }
 
+/* ====================== Modal window! ====================== */
 
+.backdrop {
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    left: 0px;
+    transition: opacity var(--transition-var), visibility var(--transition-var);
 
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    background-color: var(--dark-color-rgba);
+}
 
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal {
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    min-width: 408px;
+    min-height: 576px;
+    padding: 15px;
+
+    background-color: var(--modal-window);
+}
+
+.modal-close-btm {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    top: 24px;
+    right: 24px;
+    background-color: var(--accent-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;    
+    transition: border-color var(--transition-var);
+}
+
+.modal-close-btm:hover,
+.modal-close-btm:focus {
+    border-color: var(--subtle-text-color);
+
+}
+
+.modal-close-btm-icon {
+    fill: var(--subtle-text-color);
+    transition: fill var(--transition-var);
+}
+
+.modal-close-btm:hover .modal-close-btm-icon,
+.modal-close-btm:focus .modal-close-btm-icon {
+    fill: var(--dark-color);    
+}

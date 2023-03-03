@@ -29,7 +29,7 @@
             
                     <!-- ====================== Main page navigation ====================== -->
                     <ul class="site-nav link">
-                        <li class="item"><a href="./index.html" class="link medium-text">Studio</a></li> 
+                        <li class="site-nav-item item"><a href="./index.html" class="link medium-text nav-index">Studio</a></li> 
                         <li class="item"><a href="./portfolio.html" class="link medium-text">Portfolio</a></li>
                         <li class="item"><a href="" class="link medium-text">Contacts</a></li>
                     </ul>
@@ -59,8 +59,8 @@
                 <h1 class="hero-title">Effective Solutions</h1>
                 <h1 class="hero-title">for Your Business</h1>
             </div>
-            <a href="./modal.html" class="link">
-                <button type="button" class="hero-button button-text">Order Service</button>
+            <a href="" class="link">
+                <button type="button" class="hero-button button-text" data-modal-open>Order Service</button>
             </a>
         </section>
 
@@ -449,5 +449,18 @@
         </div>
           
     </footer>
+
+    <!-- ============================= Modal windov ============================= -->
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam corrupti ipsum dolorem maiores ducimus eius dolore architecto, rem quos perferendis omnis, ad praesentium quisquam molestiae!</p>
+            <button type="button" class="modal-close-btm" data-modal-close>
+                <svg class="modal-close-btm-icon" width="8" height="8">
+                    <use href="./images/icons.svg#icon-close-modal"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 </html>

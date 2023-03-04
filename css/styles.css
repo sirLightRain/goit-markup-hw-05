@@ -204,6 +204,8 @@ button {
     background-color: var(--primary-brand-color);
     border: none;
     cursor: pointer;
+
+    transition: color var(--transition-var), background-color var(--transition-var);
 }
 
 .hero-button:focus,
@@ -303,6 +305,7 @@ button {
     padding-top: 24px;
     padding-bottom: 24px;
     transition: color var(--transition-var);
+    
 }
 
 .site-nav .link:hover,
@@ -566,7 +569,7 @@ button {
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    transition: color var(--transition-var) background-color var(--transition-var);
+    transition: color var(--transition-var), background-color var(--transition-var), box-shadow var(--transition-var), border var(--transition-var), border-radius var(--transition-var);
 }
 
 .button-nav:hover,

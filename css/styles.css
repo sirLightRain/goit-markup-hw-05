@@ -14,9 +14,8 @@
     --accent-color: #E7E9FC;
     --light-colors: #F4F4FD;
     --modal-window: #FCFCFC;
-    
-    --space-under-section: 120px;
 
+    --space-under-section: 120px;
     --transition-var: 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
@@ -54,6 +53,19 @@ img {
 
 button {
     cursor: pointer;
+}
+/* ====================== Link and list ====================== */
+/* Link style */
+.list {
+    list-style: none;
+}
+
+.link {
+    font-style: normal;
+    text-decoration: none;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
 }
 
 /* ====================== Text Guide ====================== */
@@ -267,20 +279,6 @@ button {
      background-color: var(--light-colors);
 }
 
-
-/* ====================== Link and list ====================== */
-/* Link style */
-.link {
-    font-style: normal;
-    text-decoration: none;
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-}
-
-.list {
-    list-style: none;
-}
 /* ====================== Site Navigation ====================== */
 
 /* Main mav */
